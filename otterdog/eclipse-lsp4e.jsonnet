@@ -11,6 +11,7 @@ orgs.newOrg('eclipse-lsp4e') {
   },
   webhooks+: [
     orgs.newOrgWebhook('https://ci.eclipse.org/lsp4e/github-webhook/') {
+      content_type: "json",
       events+: [
         "pull_request",
         "push"
@@ -24,9 +25,6 @@ orgs.newOrg('eclipse-lsp4e') {
       has_discussions: true,
       homepage: "",
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
     },
   ],
 }
